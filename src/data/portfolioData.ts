@@ -192,7 +192,7 @@ export const projectsData: Project[] = [
     featured: true,
     accentColor: "#00D9FF",
     status: "Prototype",
-    image: "/images/project-resume-trainer.svg"
+    image: "./images/project-resume-trainer.svg"
   },
   {
     id: "rythu-sarvam",
@@ -212,7 +212,7 @@ export const projectsData: Project[] = [
     featured: true,
     accentColor: "#10B981",
     status: "Prototype",
-    image: "/images/project-rythu-sarvam.svg"
+    image: "./images/project-rythu-sarvam.svg"
   },
   {
     id: "agrishield-ai",
@@ -232,7 +232,7 @@ export const projectsData: Project[] = [
     featured: true,
     accentColor: "#8B5CF6",
     status: "In Development",
-    image: "/images/project-agrishield.svg"
+    image: "./images/project-agrishield.svg"
   },
   {
     id: "portfolio-website",
@@ -253,7 +253,7 @@ export const projectsData: Project[] = [
     featured: true,
     accentColor: "#00D9FF",
     status: "Completed",
-    image: "/images/project-portfolio.svg"
+    image: "./images/project-portfolio.svg"
   }
 ];
 

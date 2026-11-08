@@ -26,13 +26,15 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, onToa
   if (!isOpen) return null;
 
   const handlePrint = () => {
-    window.open('/resume/Shiva_Nani_Gurrala_Resume.html', '_blank');
+    const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+    window.open(`${baseUrl}resume/Shiva_Nani_Gurrala_Resume.html`, '_blank');
     onToast('Opened printable resume format');
   };
 
   const handleDownload = () => {
+    const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
     const link = document.createElement('a');
-    link.href = '/resume/Shiva_Nani_Gurrala_Resume.html';
+    link.href = `${baseUrl}resume/Shiva_Nani_Gurrala_Resume.html`;
     link.download = 'Shiva_Nani_Gurrala_Resume.html';
     link.click();
     onToast('Resume downloaded successfully');

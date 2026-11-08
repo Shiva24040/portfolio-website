@@ -24,8 +24,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onToast }) => {
   };
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText(personalInfo.email);
-    onToast('Email copied to clipboard: ' + personalInfo.email);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(personalInfo.email)
+        .then(() => onToast('Email copied to clipboard: ' + personalInfo.email))
+        .catch(() => onToast('Email: ' + personalInfo.email));
+    } else {
+      onToast('Email: ' + personalInfo.email);
+    }
   };
 
   return (
@@ -161,7 +166,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onToast }) => {
             <div className="relative w-full max-w-sm sm:max-w-md group">
               <div className="relative rounded-3xl p-2 glass-card border border-cyber-cyan/30 shadow-2xl transition-all duration-300 hover:border-cyber-cyan/60 hover:shadow-glass-card-hover bg-dark-surface/90">
                 <img
-                  src="/images/shiva-avatar.svg"
+                  src="./images/shiva-avatar.svg"
                   alt="Shiva Nani Gurrala - Professional Profile"
                   className="w-full h-auto rounded-2xl object-cover transform transition-transform duration-500 group-hover:scale-[1.01]"
                   loading="eager"

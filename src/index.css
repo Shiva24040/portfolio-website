@@ -139,6 +139,11 @@
     background-image: radial-gradient(rgba(0, 217, 255, 0.15) 1px, transparent 1px);
     background-size: 28px 28px;
   }
+
+  .mask-radial {
+    mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+  }
 }
 
 /* Reduced Motion for Accessibility and Low-Spec GPU Optimization */

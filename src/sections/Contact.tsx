@@ -29,8 +29,13 @@ export const Contact: React.FC<ContactProps> = ({ onToast }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText(personalInfo.email);
-    onToast('Copied email: ' + personalInfo.email);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(personalInfo.email)
+        .then(() => onToast('Copied email: ' + personalInfo.email))
+        .catch(() => onToast('Email: ' + personalInfo.email));
+    } else {
+      onToast('Email: ' + personalInfo.email);
+    }
   };
 
   const validate = () => {
