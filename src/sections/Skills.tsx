@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SectionHeading } from '../components/SectionHeading';
 import { GlassCard } from '../components/GlassCard';
 import { SkillLevelBadge } from '../components/Badge';
-import { skillGroups } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 import type { SkillLevel, SkillItem } from '../types/portfolio';
 import { 
   Code2, 
@@ -41,6 +41,8 @@ const iconMap: Record<string, React.FC<{ className?: string }>> = {
 };
 
 export const Skills: React.FC = () => {
+  const { data } = usePortfolio();
+  const skillGroups = data.skills;
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedLevel, setSelectedLevel] = useState<string>('All');
 

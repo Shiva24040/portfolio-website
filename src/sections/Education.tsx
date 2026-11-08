@@ -1,10 +1,12 @@
 import React from 'react';
 import { SectionHeading } from '../components/SectionHeading';
 import { GlassCard } from '../components/GlassCard';
-import { educationData } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 import { GraduationCap, Calendar, MapPin, CheckCircle2, BookOpen, School } from 'lucide-react';
 
 export const Education: React.FC = () => {
+  const { data } = usePortfolio();
+  const educationData = data.education;
   return (
     <section id="education" className="py-20 md:py-28 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

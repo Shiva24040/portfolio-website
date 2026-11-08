@@ -1,11 +1,13 @@
 import React from 'react';
 import { ArrowUp, Mail, Sparkles, MapPin } from 'lucide-react';
 import { Github, Linkedin } from './Icons';
-import { personalInfo } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 
 const currentYear = 2026;
 
 export const Footer: React.FC = () => {
+  const { data } = usePortfolio();
+  const personalInfo = data.profile;
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

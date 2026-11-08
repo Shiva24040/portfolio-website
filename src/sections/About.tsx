@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionHeading } from '../components/SectionHeading';
 import { GlassCard } from '../components/GlassCard';
-import { personalInfo } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 import { 
   BrainCircuit, 
   Sparkles, 
@@ -12,6 +12,10 @@ import {
 } from 'lucide-react';
 
 export const About: React.FC = () => {
+  const { data } = usePortfolio();
+  const profile = data.profile;
+  const about = data.about;
+
   return (
     <section id="about" className="py-20 md:py-28 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +23,7 @@ export const About: React.FC = () => {
           number="01"
           tag="Identity &amp; Vision"
           title="About"
-          gradientWord="Shiva Nani"
+          gradientWord={profile.shortName || 'Shiva Nani'}
           subtitle="Building foundations at the intersection of Artificial Intelligence, Systems, and Frontend Engineering."
         />
 
@@ -43,16 +47,8 @@ export const About: React.FC = () => {
               </div>
 
               {/* Verbatim LinkedIn Introduction */}
-              <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
-                <p className="border-l-2 border-cyber-cyan/50 pl-3.5 py-0.5">
-                  I am an aspiring AI/ML Engineer with a strong interest in <strong className="text-white font-semibold">Artificial Intelligence</strong>, <strong className="text-white font-semibold">Machine Learning</strong>, and <strong className="text-white font-semibold">Generative AI</strong>. I am focused on developing the technical knowledge and problem-solving skills required to build intelligent, practical, and scalable solutions.
-                </p>
-                <p>
-                  My learning journey includes programming fundamentals, AI and machine learning concepts, Generative AI, and modern technologies such as <span className="text-cyber-cyan font-mono text-xs px-2 py-0.5 rounded bg-slate-900 border border-slate-800">GitHub</span>, <span className="text-cyber-cyan font-mono text-xs px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Linux</span>, and <span className="text-cyber-cyan font-mono text-xs px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Kubernetes</span>.
-                </p>
-                <p>
-                  I enjoy exploring emerging technologies and understanding how they can be applied to solve real-world problems.
-                </p>
+              <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed whitespace-pre-line">
+                {about.narrative}
               </div>
 
               {/* Core Interests Tags */}
@@ -62,14 +58,7 @@ export const About: React.FC = () => {
                   Primary Technical Interests
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  {[
-                    'Artificial Intelligence',
-                    'Machine Learning',
-                    'Generative AI & LLMs',
-                    'Frontend Architecture',
-                    'Linux Systems',
-                    'Kubernetes & Cloud'
-                  ].map(interest => (
+                  {about.interests.map(interest => (
                     <span
                       key={interest}
                       className="px-3 py-1 rounded-full text-xs font-mono bg-slate-800/70 text-slate-300 border border-slate-700/60 hover:border-cyber-cyan/40 hover:text-white transition-colors"
@@ -83,7 +72,7 @@ export const About: React.FC = () => {
 
             {/* Quick Stats Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {personalInfo.stats.map((stat, i) => (
+              {profile.stats.map((stat, i) => (
                 <div
                   key={i}
                   className="glass-card p-4 rounded-xl text-center border-cyber-cyan/15 hover:border-cyber-cyan/30 transition-colors"
@@ -108,7 +97,7 @@ export const About: React.FC = () => {
               </h3>
             </div>
 
-            {personalInfo.goals.map((goal, idx) => (
+            {about.goals.map((goal, idx) => (
               <GlassCard
                 key={goal.title}
                 className="border-cyber-violet/20 hover:border-cyber-violet/50"
@@ -142,7 +131,7 @@ export const About: React.FC = () => {
                 <span>My Core Engineering Principle</span>
               </div>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                "Real AI innovation is not about hype or bloated interfaces. It is about crafting reliable, lightweight, and accessible digital tools that solve tangible problems for people."
+                "{about.engineeringPrinciple}"
               </p>
             </div>
           </div>

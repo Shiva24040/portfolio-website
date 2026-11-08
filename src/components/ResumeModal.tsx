@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { X, Download, Printer, Briefcase, GraduationCap, Award, Code } from 'lucide-react';
-import { personalInfo, experienceData, skillGroups, certificationsData, educationData } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -9,6 +9,12 @@ interface ResumeModalProps {
 }
 
 export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, onToast }) => {
+  const { data } = usePortfolio();
+  const personalInfo = data.profile;
+  const experienceData = data.experience;
+  const skillGroups = data.skills;
+  const certificationsData = data.certifications;
+  const educationData = data.education;
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();

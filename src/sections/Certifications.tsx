@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionHeading } from '../components/SectionHeading';
 import { GlassCard } from '../components/GlassCard';
-import { certificationsData } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 import { 
   Award, 
   ExternalLink, 
@@ -22,6 +22,8 @@ const badgeIconMap: Record<string, React.FC<{ className?: string }>> = {
 };
 
 export const Certifications: React.FC = () => {
+  const { data } = usePortfolio();
+  const certificationsData = data.certifications;
   return (
     <section id="certifications" className="py-20 md:py-28 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

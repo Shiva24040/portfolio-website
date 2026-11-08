@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SectionHeading } from '../components/SectionHeading';
 import { GlassCard } from '../components/GlassCard';
 import { TechBadge } from '../components/Badge';
-import { projectsData } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 import type { Project } from '../types/portfolio';
 import { Github } from '../components/Icons';
 import { Sparkles, CheckCircle2, ArrowUpRight } from 'lucide-react';
@@ -12,6 +12,8 @@ interface ProjectsProps {
 }
 
 export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
+  const { data } = usePortfolio();
+  const projectsData = data.projects;
   const [filter, setFilter] = useState<'All' | 'AI/ML' | 'Frontend'>('All');
 
   const filteredProjects = projectsData.filter(

@@ -2,10 +2,12 @@ import React from 'react';
 import { SectionHeading } from '../components/SectionHeading';
 import { GlassCard } from '../components/GlassCard';
 import { TechBadge } from '../components/Badge';
-import { experienceData } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 import { Calendar, MapPin, CheckCircle2, Sparkles, Building2 } from 'lucide-react';
 
 export const Experience: React.FC = () => {
+  const { data } = usePortfolio();
+  const experienceData = data.experience;
   return (
     <section id="experience" className="py-20 md:py-28 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '../components/SectionHeading';
 import { GlassCard } from '../components/GlassCard';
-import { personalInfo } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 import { Github, Linkedin } from '../components/Icons';
 import { 
   Mail, 
@@ -18,6 +18,8 @@ interface ContactProps {
 }
 
 export const Contact: React.FC<ContactProps> = ({ onToast }) => {
+  const { data } = usePortfolio();
+  const personalInfo = data.profile;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
