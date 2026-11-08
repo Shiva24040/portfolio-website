@@ -106,10 +106,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onToast }) => {
             </div>
 
             {/* Primary Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 pt-2">
               <button
                 onClick={handleScrollToProjects}
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-cyber-cyan to-blue-500 hover:from-cyan-400 hover:to-blue-600 text-dark-base shadow-neon-cyan transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-cyber-cyan to-blue-500 hover:from-cyan-400 hover:to-blue-600 text-dark-base shadow-neon-cyan transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer min-h-[46px]"
               >
                 <span>View Projects</span>
                 <ArrowRight className="w-4 h-4" />
@@ -117,7 +117,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onToast }) => {
 
               <button
                 onClick={onOpenResume}
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm bg-slate-900/80 hover:bg-slate-800 text-slate-200 hover:text-white border border-cyber-cyan/30 hover:border-cyber-cyan/60 transition-all transform hover:-translate-y-0.5 cursor-pointer backdrop-blur-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm bg-slate-900/80 hover:bg-slate-800 text-slate-200 hover:text-white border border-cyber-cyan/30 hover:border-cyber-cyan/60 transition-all transform hover:-translate-y-0.5 cursor-pointer backdrop-blur-md min-h-[46px]"
               >
                 <Download className="w-4 h-4 text-cyber-cyan" />
                 <span>Download Resume</span>
@@ -202,20 +202,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onToast }) => {
               </div>
 
               {/* Floating Glassmorphic Pill 1: Internship Badge */}
-              <div className="absolute -top-4 -right-4 sm:-right-6 glass-panel px-3.5 py-2 rounded-xl shadow-lg border border-cyber-cyan/30 flex items-center gap-2.5 animate-float-slow bg-dark-surface/90 backdrop-blur-md">
-                <div className="w-2.5 h-2.5 rounded-full bg-cyber-cyan animate-pulse" />
+              <div className="absolute top-2 right-2 sm:-top-4 sm:-right-6 glass-panel px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl shadow-lg border border-cyber-cyan/30 flex items-center gap-2 sm:gap-2.5 animate-float-slow bg-dark-surface/95 backdrop-blur-md z-10">
+                <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-cyber-cyan animate-pulse" />
                 <div className="text-left">
-                  <div className="text-[10px] font-mono text-slate-400 uppercase">Current Role</div>
-                  <div className="text-xs font-bold text-white">Unified Mentor Intern</div>
+                  <div className="text-[9px] sm:text-[10px] font-mono text-slate-400 uppercase">Current Role</div>
+                  <div className="text-[11px] sm:text-xs font-bold text-white">Unified Mentor Intern</div>
                 </div>
               </div>
 
               {/* Floating Glassmorphic Pill 2: Performance & AI Focus */}
-              <div className="absolute -bottom-4 -left-4 sm:-left-6 glass-panel px-3.5 py-2 rounded-xl shadow-lg border border-cyber-violet/40 flex items-center gap-2.5 bg-dark-surface/90 backdrop-blur-md animate-float-slow" style={{ animationDelay: '1.5s' }}>
-                <Sparkles className="w-4 h-4 text-purple-400" />
+              <div className="absolute bottom-14 sm:-bottom-4 left-2 sm:-left-6 glass-panel px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl shadow-lg border border-cyber-violet/40 flex items-center gap-2 sm:gap-2.5 bg-dark-surface/95 backdrop-blur-md animate-float-slow z-10" style={{ animationDelay: '1.5s' }}>
+                <Sparkles className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-purple-400" />
                 <div className="text-left">
-                  <div className="text-[10px] font-mono text-slate-400 uppercase">AI Learning Path</div>
-                  <div className="text-xs font-bold text-purple-200">Generative AI &amp; ML</div>
+                  <div className="text-[9px] sm:text-[10px] font-mono text-slate-400 uppercase">AI Learning Path</div>
+                  <div className="text-[11px] sm:text-xs font-bold text-purple-200">Generative AI &amp; ML</div>
                 </div>
               </div>
             </div>

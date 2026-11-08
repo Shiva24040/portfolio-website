@@ -19,7 +19,7 @@ export const Education: React.FC = () => {
         />
 
         <div className="max-w-4xl mx-auto">
-          <div className="relative pl-6 sm:pl-8 border-l-2 border-cyber-violet/40 space-y-12">
+          <div className="ml-3 sm:ml-0 relative pl-6 sm:pl-8 border-l-2 border-cyber-violet/40 space-y-12">
             {educationData.map((edu, idx) => (
               <div key={edu.id} className="relative group">
                 

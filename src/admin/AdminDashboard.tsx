@@ -192,7 +192,7 @@ export const AdminDashboard: React.FC = () => {
 
       {/* Mobile Drawer */}
       {mobileSidebarOpen && (
-        <div className="md:hidden fixed inset-0 z-50 bg-dark-base/95 backdrop-blur-2xl p-6 flex flex-col justify-between animate-in slide-in-from-top-4">
+        <div className="md:hidden fixed inset-0 z-50 bg-dark-base/95 backdrop-blur-2xl p-6 flex flex-col justify-between animate-in slide-in-from-top-4 overflow-y-auto">
           <div>
             <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-4">
               <span className="font-bold text-white text-base font-heading">Admin Navigation</span>

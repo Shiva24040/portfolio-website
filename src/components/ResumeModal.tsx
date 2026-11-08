@@ -62,7 +62,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, onToa
         <div className="flex items-center justify-between p-4 md:p-5 border-b border-slate-800 bg-slate-900/60">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-cyber-cyan animate-pulse" />
-            <h3 id="resume-modal-title" className="text-base md:text-lg font-bold text-white font-heading">
+            <h3 id="resume-modal-title" className="text-xs sm:text-base md:text-lg font-bold text-white font-heading truncate max-w-[140px] sm:max-w-none">
               Shiva Nani Gurrala — Verified Resume
             </h3>
           </div>

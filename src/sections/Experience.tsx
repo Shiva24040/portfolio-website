@@ -21,7 +21,7 @@ export const Experience: React.FC = () => {
 
         <div className="max-w-4xl mx-auto">
           {/* Timeline Container */}
-          <div className="relative pl-6 sm:pl-8 border-l-2 border-cyber-cyan/30 space-y-12">
+          <div className="ml-3 sm:ml-0 relative pl-6 sm:pl-8 border-l-2 border-cyber-cyan/30 space-y-12">
             {experienceData.map((exp) => (
               <div key={exp.id} className="relative group">
                 

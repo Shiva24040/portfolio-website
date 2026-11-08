@@ -216,7 +216,7 @@ export const Contact: React.FC<ContactProps> = ({ onToast }) => {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. John Doe"
-                        className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border text-white text-sm placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyber-cyan ${
+                        className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border text-white text-base sm:text-sm placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyber-cyan ${
                           errors.name ? 'border-red-500/60' : 'border-slate-800'
                         }`}
                       />
@@ -239,7 +239,7 @@ export const Contact: React.FC<ContactProps> = ({ onToast }) => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="e.g. john@example.com"
-                        className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border text-white text-sm placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyber-cyan ${
+                        className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border text-white text-base sm:text-sm placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyber-cyan ${
                           errors.email ? 'border-red-500/60' : 'border-slate-800'
                         }`}
                       />
@@ -263,7 +263,7 @@ export const Contact: React.FC<ContactProps> = ({ onToast }) => {
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       placeholder="e.g. Internship Opportunity / Collaboration"
-                      className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border text-white text-sm placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyber-cyan ${
+                      className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border text-white text-base sm:text-sm placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyber-cyan ${
                         errors.subject ? 'border-red-500/60' : 'border-slate-800'
                       }`}
                     />
@@ -286,7 +286,7 @@ export const Contact: React.FC<ContactProps> = ({ onToast }) => {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Write your note, feedback, or project details..."
-                      className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border text-white text-sm placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyber-cyan ${
+                      className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border text-white text-base sm:text-sm placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyber-cyan ${
                         errors.message ? 'border-red-500/60' : 'border-slate-800'
                       }`}
                     />

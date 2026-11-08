@@ -148,7 +148,7 @@ export const Skills: React.FC = () => {
                     {group.category}
                   </h3>
                 </div>
-                <span className="text-xs font-mono text-slate-400">
+                <span className="text-xs font-mono text-slate-400 hidden sm:inline-block">
                   {group.description}
                 </span>
               </div>
