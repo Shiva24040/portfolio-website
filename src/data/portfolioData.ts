@@ -32,7 +32,7 @@ I enjoy exploring emerging technologies and understanding how they can be applie
   stats: [
     { label: "Focused Domains", value: "AI, ML & Frontend" },
     { label: "Active Projects", value: "4+ Prototypes" },
-    { label: "Certifications", value: "5 Verified" },
+    { label: "Certifications", value: "8 Verified" },
     { label: "Internship", value: "Unified Mentor" }
   ]
 };
@@ -259,72 +259,128 @@ export const projectsData: Project[] = [
 
 export const certificationsData: Certification[] = [
   {
-    id: "cert-linux",
-    title: "Linux for Absolute Beginners",
-    issuer: "Udemy / Open Source Training",
-    year: "2024",
-    badgeType: "dev",
+    id: "cert-ai-agents",
+    title: "Unleashing the Power of AI Agents",
+    issuer: "IBM",
+    year: "2026",
+    issuedDate: "Sep 2026",
+    credentialId: "ALM-COURSE_3825456",
+    badgeType: "ai",
     skillsGained: [
-      "Bash Shell Commands",
-      "File System Architecture",
-      "User Permissions & Security",
-      "Package Management"
+      "Agentic AI Development",
+      "AI Agents Architecture",
+      "Autonomous Decision Workflows",
+      "LLM Tool Orchestration"
+    ],
+    credentialUrl: "https://www.linkedin.com/in/shiva-nani-gurrala-619026392/details/certifications/"
+  },
+  {
+    id: "cert-exploring-ai",
+    title: "Exploring Artificial Intelligence",
+    issuer: "IBM",
+    year: "2026",
+    issuedDate: "Oct 2026",
+    credentialId: "ALM-COURSE_3825247",
+    badgeType: "ai",
+    skillsGained: [
+      "AI Fundamentals",
+      "Machine Learning Foundations",
+      "Neural Networks & Deep Learning",
+      "Cognitive Computing"
     ],
     credentialUrl: "https://www.linkedin.com/in/shiva-nani-gurrala-619026392/details/certifications/"
   },
   {
     id: "cert-genai",
-    title: "Generative AI Fundamentals",
-    issuer: "Cloud / AI Learning Platform",
-    year: "2024",
+    title: "Academy Accreditation - Generative AI Fundamentals",
+    issuer: "Databricks",
+    year: "2026",
+    issuedDate: "Oct 2026",
+    credentialId: "196420037",
     badgeType: "ai",
     skillsGained: [
       "LLM Foundations",
       "Prompt Engineering",
       "Attention & Transformer Concepts",
-      "Responsible AI Principles"
-    ],
-    credentialUrl: "https://www.linkedin.com/in/shiva-nani-gurrala-619026392/details/certifications/"
-  },
-  {
-    id: "cert-github",
-    title: "GitHub Basics",
-    issuer: "GitHub / Education Partner",
-    year: "2024",
-    badgeType: "dev",
-    skillsGained: [
-      "Git Repositories",
-      "Branching & Merging",
-      "Pull Requests & Code Review",
-      "Issue Tracking"
-    ],
-    credentialUrl: "https://www.linkedin.com/in/shiva-nani-gurrala-619026392/details/certifications/"
-  },
-  {
-    id: "cert-teams",
-    title: "Microsoft Teams for Education",
-    issuer: "Microsoft",
-    year: "2024",
-    badgeType: "productivity",
-    skillsGained: [
-      "Collaborative Workspaces",
-      "Virtual Classrooms",
-      "Task Coordination",
-      "Resource Sharing"
+      "Responsible Generative AI"
     ],
     credentialUrl: "https://www.linkedin.com/in/shiva-nani-gurrala-619026392/details/certifications/"
   },
   {
     id: "cert-copilot",
     title: "Learning Microsoft 365 Copilot for Work (2024)",
-    issuer: "LinkedIn Learning / Microsoft",
-    year: "2024",
+    issuer: "LinkedIn",
+    year: "2026",
+    issuedDate: "Oct 2026",
     badgeType: "ai",
     skillsGained: [
-      "Copilot Integration in M365",
-      "Contextual Prompts for Productivity",
-      "Data Synthesis & Document Automation",
-      "Enterprise AI Workflows"
+      "Microsoft Copilot",
+      "Office 365 AI Integration",
+      "Work Productivity Prompts",
+      "Enterprise Automation"
+    ],
+    credentialUrl: "https://www.linkedin.com/in/shiva-nani-gurrala-619026392/details/certifications/"
+  },
+  {
+    id: "cert-kubernetes",
+    title: "Kubernetes for Absolute Beginners",
+    issuer: "KodeKloud",
+    year: "2026",
+    issuedDate: "Oct 2026",
+    credentialId: "ba785e2e-ccae-4a0d-9081-f554738c4c07",
+    badgeType: "cloud",
+    skillsGained: [
+      "Container Orchestration",
+      "Pods, ReplicaSets & Deployments",
+      "Cluster Architecture",
+      "YAML Declarative Manifests"
+    ],
+    credentialUrl: "https://www.linkedin.com/in/shiva-nani-gurrala-619026392/details/certifications/"
+  },
+  {
+    id: "cert-linux",
+    title: "Linux For Absolute Beginners",
+    issuer: "KodeKloud",
+    year: "2026",
+    issuedDate: "Oct 2026",
+    credentialId: "939ddb22-82b8-49c1-a0e8-b1a728879fbe",
+    badgeType: "dev",
+    skillsGained: [
+      "Bash Shell Commands",
+      "Linux File System Architecture",
+      "User Permissions & Security",
+      "Package Management"
+    ],
+    credentialUrl: "https://www.linkedin.com/in/shiva-nani-gurrala-619026392/details/certifications/"
+  },
+  {
+    id: "cert-github",
+    title: "GitHub Basics",
+    issuer: "Simplilearn",
+    year: "2026",
+    issuedDate: "Oct 2026",
+    credentialId: "10924391",
+    badgeType: "dev",
+    skillsGained: [
+      "Git Repositories",
+      "Branching & Merging",
+      "Pull Requests & Code Review",
+      "Version Control Best Practices"
+    ],
+    credentialUrl: "https://www.linkedin.com/in/shiva-nani-gurrala-619026392/details/certifications/"
+  },
+  {
+    id: "cert-teams",
+    title: "Get started with Microsoft Teams for Education",
+    issuer: "Microsoft",
+    year: "2026",
+    issuedDate: "Oct 2026",
+    badgeType: "productivity",
+    skillsGained: [
+      "Collaborative Virtual Spaces",
+      "Virtual Classrooms & Channels",
+      "Team Coordination",
+      "Resource Sharing & Workflows"
     ],
     credentialUrl: "https://www.linkedin.com/in/shiva-nani-gurrala-619026392/details/certifications/"
   }

@@ -36,6 +36,8 @@ export interface Certification {
   title: string;
   issuer: string;
   year: string;
+  issuedDate?: string;
+  credentialId?: string;
   skillsGained: string[];
   credentialUrl?: string;
   badgeType: 'ai' | 'cloud' | 'dev' | 'productivity';

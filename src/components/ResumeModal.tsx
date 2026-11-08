@@ -202,9 +202,12 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, onToa
             </h4>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-slate-300">
               {certificationsData.map(cert => (
-                <li key={cert.id} className="flex items-center gap-2 p-2 rounded bg-slate-900/30 border border-slate-800/50">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyber-violet flex-shrink-0" />
-                  <span className="truncate">{cert.title}</span>
+                <li key={cert.id} className="flex items-center justify-between gap-2 p-2 rounded bg-slate-900/30 border border-slate-800/50">
+                  <div className="flex items-center gap-2 truncate">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyber-violet flex-shrink-0" />
+                    <span className="truncate">{cert.title}</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-cyber-cyan flex-shrink-0">{cert.issuer}</span>
                 </li>
               ))}
             </ul>
