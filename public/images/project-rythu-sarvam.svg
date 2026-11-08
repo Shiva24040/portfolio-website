@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" fill="none">
+  <defs>
+    <linearGradient id="farm-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080B14"/>
+      <stop offset="100%" stop-color="#0C1B1A"/>
+    </linearGradient>
+    <linearGradient id="emerald-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#00D9FF"/>
+    </linearGradient>
+    <filter id="emerald-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="360" rx="16" fill="url(#farm-bg)"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="600" height="42" fill="#0E2322" rx="16 16 0 0"/>
+  <circle cx="28" cy="21" r="5" fill="#EF4444"/>
+  <circle cx="46" cy="21" r="5" fill="#F59E0B"/>
+  <circle cx="64" cy="21" r="5" fill="#10B981"/>
+  <text x="300" y="26" font-family="'JetBrains Mono', monospace" font-size="12" fill="#6EE7B7" text-anchor="middle">rythu-sarvam.org • telangana agro-ai dashboard</text>
+
+  <!-- Left Card: Soil & Weather Telemetry -->
+  <rect x="30" y="65" width="240" height="260" rx="12" fill="#101F20" stroke="rgba(16, 185, 129, 0.25)" stroke-width="1.5"/>
+  <text x="50" y="98" font-family="'Outfit', sans-serif" font-size="14" font-weight="700" fill="#F8FAFC">WEATHER &amp; CROP TELEMETRY</text>
+  
+  <rect x="50" y="115" width="200" height="45" rx="8" fill="#172F2D"/>
+  <text x="65" y="136" font-family="'Inter', sans-serif" font-size="11" fill="#94A3B8">Soil Moisture / Nitrogen</text>
+  <text x="65" y="152" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#10B981">68% • Optimal for Paddy</text>
+
+  <rect x="50" y="170" width="200" height="45" rx="8" fill="#172F2D"/>
+  <text x="65" y="191" font-family="'Inter', sans-serif" font-size="11" fill="#94A3B8">Rain Forecast (Next 72h)</text>
+  <text x="65" y="207" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#00D9FF">24mm • Moderate Rain Alert</text>
+
+  <rect x="50" y="225" width="200" height="85" rx="8" fill="#172F2D"/>
+  <text x="65" y="246" font-family="'Inter', sans-serif" font-size="11" fill="#94A3B8">AI Crop Recommendation</text>
+  <text x="65" y="268" font-family="'Outfit', sans-serif" font-size="16" font-weight="800" fill="#34D399">Cotton &amp; Pulses</text>
+  <text x="65" y="295" font-family="'JetBrains Mono', monospace" font-size="10" fill="#6EE7B7">Predicted Yield: +18.4%</text>
+
+  <!-- Right Card: Market Price Trends & Map -->
+  <rect x="290" y="65" width="280" height="260" rx="12" fill="#101F20" stroke="rgba(0, 217, 255, 0.25)" stroke-width="1.5"/>
+  <text x="315" y="98" font-family="'Outfit', sans-serif" font-size="14" font-weight="700" fill="#F8FAFC">REGIONAL MANDI PRICE TRENDS</text>
+
+  <!-- Trend Graph -->
+  <path d="M315 220 L355 195 L395 210 L445 160 L495 175 L535 140" fill="none" stroke="url(#emerald-grad)" stroke-width="3" filter="url(#emerald-glow)"/>
+  <circle cx="535" cy="140" r="5" fill="#00D9FF"/>
+  <text x="495" y="130" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#00D9FF">₹3,450/q</text>
+
+  <line x1="315" y1="230" x2="540" y2="230" stroke="#334155" stroke-width="1"/>
+  <text x="315" y="248" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748B">WARANGAL</text>
+  <text x="415" y="248" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748B">KHAMMAM</text>
+  <text x="495" y="248" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748B">HYDERABAD</text>
+
+  <rect x="315" y="270" width="230" height="38" rx="8" fill="#172F2D"/>
+  <text x="330" y="294" font-family="'Inter', sans-serif" font-size="12" fill="#A7F3D0">Vernacular Voice &amp; SMS Advisory Active</text>
+</svg>

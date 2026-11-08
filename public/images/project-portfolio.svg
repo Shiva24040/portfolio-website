@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" fill="none">
+  <defs>
+    <linearGradient id="p-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080B14"/>
+      <stop offset="50%" stop-color="#0E1628"/>
+      <stop offset="100%" stop-color="#131C35"/>
+    </linearGradient>
+    <linearGradient id="p-cyan-violet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <filter id="p-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="360" rx="16" fill="url(#p-bg)"/>
+  
+  <!-- Browser top bar -->
+  <rect x="0" y="0" width="600" height="42" fill="#15213D" rx="16 16 0 0"/>
+  <circle cx="28" cy="21" r="5" fill="#EF4444"/>
+  <circle cx="46" cy="21" r="5" fill="#F59E0B"/>
+  <circle cx="64" cy="21" r="5" fill="#10B981"/>
+  <rect x="120" y="10" width="360" height="22" rx="11" fill="#0A0F1D"/>
+  <text x="300" y="25" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38BDF8" text-anchor="middle">https://shiva24040.github.io/portfolio-website</text>
+
+  <!-- Hero Mockup inside Browser -->
+  <rect x="35" y="65" width="330" height="255" rx="12" fill="#0F172A" stroke="rgba(0, 217, 255, 0.25)" stroke-width="1.5"/>
+  <text x="55" y="100" font-family="'Outfit', sans-serif" font-size="18" font-weight="900" fill="#F8FAFC">SHIVA NANI GURRALA</text>
+  <text x="55" y="122" font-family="'JetBrains Mono', monospace" font-size="11" fill="#00D9FF">ASPIRING AI/ML ENGINEER</text>
+
+  <!-- Glowing interactive buttons -->
+  <rect x="55" y="145" width="95" height="32" rx="6" fill="#00D9FF" opacity="0.9"/>
+  <text x="102" y="166" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#080B14" text-anchor="middle">View Projects</text>
+
+  <rect x="160" y="145" width="95" height="32" rx="6" fill="none" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="207" y="166" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#C4B5FD" text-anchor="middle">Get Resume</text>
+
+  <!-- Metric Badges in Hero -->
+  <g transform="translate(55, 195)">
+    <rect x="0" y="0" width="80" height="50" rx="8" fill="#1E293B" stroke="rgba(255,255,255,0.06)"/>
+    <text x="40" y="24" font-family="'Outfit', sans-serif" font-size="16" font-weight="800" fill="#38BDF8" text-anchor="middle">100</text>
+    <text x="40" y="38" font-family="'Inter', sans-serif" font-size="9" fill="#94A3B8" text-anchor="middle">PERFORMANCE</text>
+
+    <rect x="90" y="0" width="80" height="50" rx="8" fill="#1E293B" stroke="rgba(255,255,255,0.06)"/>
+    <text x="130" y="24" font-family="'Outfit', sans-serif" font-size="16" font-weight="800" fill="#10B981" text-anchor="middle">60 FPS</text>
+    <text x="130" y="38" font-family="'Inter', sans-serif" font-size="9" fill="#94A3B8" text-anchor="middle">GPU ACCEL</text>
+
+    <rect x="180" y="0" width="80" height="50" rx="8" fill="#1E293B" stroke="rgba(255,255,255,0.06)"/>
+    <text x="220" y="24" font-family="'Outfit', sans-serif" font-size="16" font-weight="800" fill="#A78BFA" text-anchor="middle">0 KB</text>
+    <text x="220" y="38" font-family="'Inter', sans-serif" font-size="9" fill="#94A3B8" text-anchor="middle">3D OVERHEAD</text>
+  </g>
+
+  <!-- Right Visual Avatar Glass Card Mockup -->
+  <rect x="385" y="65" width="180" height="255" rx="12" fill="#0F172A" stroke="url(#p-cyan-violet)" stroke-width="1.5" filter="url(#p-glow)"/>
+  <circle cx="475" cy="140" r="45" fill="#1E293B" stroke="#00D9FF" stroke-width="2"/>
+  <polygon points="475,108 495,145 455,145" fill="#00D9FF" opacity="0.8"/>
+  <text x="475" y="215" font-family="'Outfit', sans-serif" font-size="13" font-weight="700" fill="#F8FAFC" text-anchor="middle">GLASSMORPHISM</text>
+  <text x="475" y="235" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#8B5CF6" text-anchor="middle">DARK AI THEME</text>
+  
+  <rect x="405" y="260" width="140" height="30" rx="6" fill="#1E293B" stroke="rgba(0,217,255,0.3)"/>
+  <text x="475" y="280" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" fill="#38BDF8" text-anchor="middle">Unified Mentor Intern</text>
+</svg>
