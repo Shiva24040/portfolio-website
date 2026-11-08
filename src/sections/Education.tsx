@@ -6,7 +6,7 @@ import { GraduationCap, Calendar, MapPin, CheckCircle2, BookOpen, School } from 
 
 export const Education: React.FC = () => {
   const { data } = usePortfolio();
-  const educationData = data.education;
+  const educationData = Array.isArray(data?.education) ? data.education : [];
   return (
     <section id="education" className="py-20 md:py-28 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

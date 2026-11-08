@@ -23,7 +23,7 @@ const badgeIconMap: Record<string, React.FC<{ className?: string }>> = {
 
 export const Certifications: React.FC = () => {
   const { data } = usePortfolio();
-  const certificationsData = data.certifications;
+  const certificationsData = Array.isArray(data?.certifications) ? data.certifications : [];
   return (
     <section id="certifications" className="py-20 md:py-28 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -9,7 +9,7 @@ interface CertificationsTabProps {
 
 export const CertificationsTab: React.FC<CertificationsTabProps> = ({ onToast }) => {
   const { data, updateSection } = usePortfolio();
-  const [certs, setCerts] = useState<Certification[]>(data.certifications);
+  const [certs, setCerts] = useState<Certification[]>(Array.isArray(data.certifications) ? data.certifications : []);
   const [saving, setSaving] = useState(false);
   const [editingCert, setEditingCert] = useState<Certification | null>(null);
   const [isNew, setIsNew] = useState(false);

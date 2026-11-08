@@ -7,7 +7,7 @@ import { Calendar, MapPin, CheckCircle2, Sparkles, Building2 } from 'lucide-reac
 
 export const Experience: React.FC = () => {
   const { data } = usePortfolio();
-  const experienceData = data.experience;
+  const experienceData = Array.isArray(data?.experience) ? data.experience : [];
   return (
     <section id="experience" className="py-20 md:py-28 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

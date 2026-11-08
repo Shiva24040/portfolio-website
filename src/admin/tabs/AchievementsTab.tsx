@@ -8,8 +8,8 @@ interface AchievementsTabProps {
 
 export const AchievementsTab: React.FC<AchievementsTabProps> = ({ onToast }) => {
   const { data, updateSection } = usePortfolio();
-  const [achievements, setAchievements] = useState(data.achievements || []);
-  const [positions, setPositions] = useState(data.positions || []);
+  const [achievements, setAchievements] = useState(Array.isArray(data.achievements) ? data.achievements : []);
+  const [positions, setPositions] = useState(Array.isArray(data.positions) ? data.positions : []);
   const [saving, setSaving] = useState(false);
 
   const handleAddAchievement = () => {

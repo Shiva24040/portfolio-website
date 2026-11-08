@@ -9,7 +9,7 @@ interface ProjectsTabProps {
 
 export const ProjectsTab: React.FC<ProjectsTabProps> = ({ onToast }) => {
   const { data, updateSection } = usePortfolio();
-  const [projects, setProjects] = useState<Project[]>(data.projects);
+  const [projects, setProjects] = useState<Project[]>(Array.isArray(data.projects) ? data.projects : []);
   const [saving, setSaving] = useState(false);
   const [editingProject, setEditingProject] = useState<Project | null>(null);
   const [isNew, setIsNew] = useState(false);

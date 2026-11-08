@@ -9,7 +9,7 @@ interface ExperienceTabProps {
 
 export const ExperienceTab: React.FC<ExperienceTabProps> = ({ onToast }) => {
   const { data, updateSection } = usePortfolio();
-  const [experiences, setExperiences] = useState<ExperienceItem[]>(data.experience);
+  const [experiences, setExperiences] = useState<ExperienceItem[]>(Array.isArray(data.experience) ? data.experience : []);
   const [saving, setSaving] = useState(false);
   const [editingExp, setEditingExp] = useState<ExperienceItem | null>(null);
   const [isNew, setIsNew] = useState(false);

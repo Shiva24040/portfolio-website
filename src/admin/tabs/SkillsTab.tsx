@@ -10,7 +10,7 @@ interface SkillsTabProps {
 
 export const SkillsTab: React.FC<SkillsTabProps> = ({ onToast }) => {
   const { data, updateSection } = usePortfolio();
-  const [skillGroups, setSkillGroups] = useState<SkillGroup[]>(data.skills);
+  const [skillGroups, setSkillGroups] = useState<SkillGroup[]>(Array.isArray(data.skills) ? data.skills : []);
   const [saving, setSaving] = useState(false);
 
   // New Skill Modal / Inline State

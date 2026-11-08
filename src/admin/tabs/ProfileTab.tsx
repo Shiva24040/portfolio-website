@@ -16,9 +16,11 @@ export const ProfileTab: React.FC<ProfileTabProps> = ({ onToast }) => {
   };
 
   const handleStatChange = (index: number, field: 'label' | 'value', value: string) => {
-    const newStats = [...form.stats];
-    newStats[index] = { ...newStats[index], [field]: value };
-    setForm(prev => ({ ...prev, stats: newStats }));
+    const newStats = Array.isArray(form.stats) ? [...form.stats] : [];
+    if (newStats[index]) {
+      newStats[index] = { ...newStats[index], [field]: value };
+      setForm(prev => ({ ...prev, stats: newStats }));
+    }
   };
 
   const handleSave = async (e: React.FormEvent) => {
@@ -235,7 +237,7 @@ export const ProfileTab: React.FC<ProfileTabProps> = ({ onToast }) => {
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {form.stats.map((stat, idx) => (
+          {(Array.isArray(form.stats) ? form.stats : []).map((stat, idx) => (
             <div key={idx} className="p-3 rounded-xl bg-slate-900/70 border border-slate-800 space-y-2">
               <div>
                 <label className="block text-[10px] font-mono uppercase text-slate-400 mb-1">

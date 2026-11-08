@@ -16,6 +16,37 @@ export const About: React.FC = () => {
   const profile = data.profile;
   const about = data.about;
 
+  // Normalize stats to array format safely to prevent any runtime exceptions
+  let statsList: { label: string; value: string }[] = [];
+  if (Array.isArray(profile?.stats)) {
+    statsList = profile.stats;
+  } else if (profile?.stats && typeof profile.stats === 'object') {
+    statsList = Object.entries(profile.stats).map(([k, v]) => ({
+      label: k.replace(/([A-Z])/g, ' $1').toUpperCase(),
+      value: String(v),
+    }));
+  } else {
+    statsList = [
+      { label: 'Focused Domains', value: 'AI, ML & Frontend' },
+      { label: 'Active Projects', value: '4+ Prototypes' },
+      { label: 'Certifications', value: '8 Verified' },
+      { label: 'Internship', value: 'Unified Mentor' },
+    ];
+  }
+
+  const interestsList = Array.isArray(about?.interests)
+    ? about.interests
+    : [
+        'Artificial Intelligence',
+        'Machine Learning',
+        'Generative AI & LLMs',
+        'Frontend Architecture',
+        'Linux Systems',
+        'Kubernetes & Cloud',
+      ];
+
+  const goalsList = Array.isArray(about?.goals) ? about.goals : [];
+
   return (
     <section id="about" className="py-20 md:py-28 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +89,7 @@ export const About: React.FC = () => {
                   Primary Technical Interests
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  {about.interests.map(interest => (
+                  {interestsList.map(interest => (
                     <span
                       key={interest}
                       className="px-3 py-1 rounded-full text-xs font-mono bg-slate-800/70 text-slate-300 border border-slate-700/60 hover:border-cyber-cyan/40 hover:text-white transition-colors"
@@ -72,7 +103,7 @@ export const About: React.FC = () => {
 
             {/* Quick Stats Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {profile.stats.map((stat, i) => (
+              {statsList.map((stat, i) => (
                 <div
                   key={i}
                   className="glass-card p-4 rounded-xl text-center border-cyber-cyan/15 hover:border-cyber-cyan/30 transition-colors"
@@ -97,7 +128,7 @@ export const About: React.FC = () => {
               </h3>
             </div>
 
-            {about.goals.map((goal, idx) => (
+            {goalsList.map((goal, idx) => (
               <GlassCard
                 key={goal.title}
                 className="border-cyber-violet/20 hover:border-cyber-violet/50"

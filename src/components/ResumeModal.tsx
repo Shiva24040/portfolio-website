@@ -11,10 +11,10 @@ interface ResumeModalProps {
 export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, onToast }) => {
   const { data } = usePortfolio();
   const personalInfo = data.profile;
-  const experienceData = data.experience;
-  const skillGroups = data.skills;
-  const certificationsData = data.certifications;
-  const educationData = data.education;
+  const experienceData = Array.isArray(data?.experience) ? data.experience : [];
+  const skillGroups = Array.isArray(data?.skills) ? data.skills : [];
+  const certificationsData = Array.isArray(data?.certifications) ? data.certifications : [];
+  const educationData = Array.isArray(data?.education) ? data.education : [];
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();

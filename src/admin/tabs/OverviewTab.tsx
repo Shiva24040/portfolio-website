@@ -16,19 +16,21 @@ interface OverviewTabProps {
 export const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigateTab }) => {
   const { data } = usePortfolio();
 
-  const totalSkills = data.skills.reduce((acc, g) => acc + g.skills.length, 0);
+  const totalSkills = Array.isArray(data.skills)
+    ? data.skills.reduce((acc, g) => acc + (Array.isArray(g?.skills) ? g.skills.length : 0), 0)
+    : 0;
 
   const statCards = [
     {
       label: 'Featured Projects',
-      value: data.projects.length,
+      value: Array.isArray(data.projects) ? data.projects.length : 0,
       icon: FolderGit2,
       tab: 'projects',
       color: 'text-cyber-cyan border-cyber-cyan/30 bg-cyber-cyan/10',
     },
     {
       label: 'Verified Certifications',
-      value: data.certifications.length,
+      value: Array.isArray(data.certifications) ? data.certifications.length : 0,
       icon: Award,
       tab: 'certifications',
       color: 'text-purple-400 border-purple-500/30 bg-purple-500/10',
@@ -42,7 +44,7 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigateTab }) => {
     },
     {
       label: 'Experience & Roles',
-      value: data.experience.length + data.positions.length,
+      value: (Array.isArray(data.experience) ? data.experience.length : 0) + (Array.isArray(data.positions) ? data.positions.length : 0),
       icon: Briefcase,
       tab: 'experience',
       color: 'text-amber-400 border-amber-500/30 bg-amber-500/10',

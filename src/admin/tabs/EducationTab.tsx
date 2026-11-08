@@ -9,7 +9,7 @@ interface EducationTabProps {
 
 export const EducationTab: React.FC<EducationTabProps> = ({ onToast }) => {
   const { data, updateSection } = usePortfolio();
-  const [education, setEducation] = useState<EducationItem[]>(data.education);
+  const [education, setEducation] = useState<EducationItem[]>(Array.isArray(data.education) ? data.education : []);
   const [saving, setSaving] = useState(false);
   const [editingEdu, setEditingEdu] = useState<EducationItem | null>(null);
   const [isNew, setIsNew] = useState(false);

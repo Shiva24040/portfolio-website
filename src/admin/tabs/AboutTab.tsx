@@ -8,28 +8,35 @@ interface AboutTabProps {
 
 export const AboutTab: React.FC<AboutTabProps> = ({ onToast }) => {
   const { data, updateSection } = usePortfolio();
-  const [about, setAbout] = useState(data.about);
+  const [about, setAbout] = useState(data.about || {});
   const [saving, setSaving] = useState(false);
-  const [interestsInput, setInterestsInput] = useState(about.interests.join(', '));
+  const initialInterests = Array.isArray(data.about?.interests)
+    ? data.about.interests.join(', ')
+    : '';
+  const [interestsInput, setInterestsInput] = useState(initialInterests);
 
   const handleGoalChange = (index: number, field: 'title' | 'description', value: string) => {
-    const updatedGoals = [...about.goals];
-    updatedGoals[index] = { ...updatedGoals[index], [field]: value };
-    setAbout({ ...about, goals: updatedGoals });
+    const updatedGoals = Array.isArray(about.goals) ? [...about.goals] : [];
+    if (updatedGoals[index]) {
+      updatedGoals[index] = { ...updatedGoals[index], [field]: value };
+      setAbout({ ...about, goals: updatedGoals });
+    }
   };
 
   const handleAddGoal = () => {
+    const currentGoals = Array.isArray(about.goals) ? about.goals : [];
     setAbout({
       ...about,
       goals: [
-        ...about.goals,
+        ...currentGoals,
         { title: 'New Strategic Goal', description: 'Describe your milestone and practical focus.' },
       ],
     });
   };
 
   const handleDeleteGoal = (index: number) => {
-    const updated = about.goals.filter((_, i) => i !== index);
+    const currentGoals = Array.isArray(about.goals) ? about.goals : [];
+    const updated = currentGoals.filter((_, i) => i !== index);
     setAbout({ ...about, goals: updated });
   };
 
@@ -122,7 +129,7 @@ export const AboutTab: React.FC<AboutTabProps> = ({ onToast }) => {
         </div>
 
         <div className="space-y-4">
-          {about.goals.map((goal, idx) => (
+          {(Array.isArray(about.goals) ? about.goals : []).map((goal, idx) => (
             <div key={idx} className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3 relative group">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-mono uppercase text-cyber-cyan font-bold">

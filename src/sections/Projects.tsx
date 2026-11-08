@@ -13,7 +13,7 @@ interface ProjectsProps {
 
 export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
   const { data } = usePortfolio();
-  const projectsData = data.projects;
+  const projectsData = Array.isArray(data?.projects) ? data.projects : [];
   const [filter, setFilter] = useState<'All' | 'AI/ML' | 'Frontend'>('All');
 
   const filteredProjects = projectsData.filter(

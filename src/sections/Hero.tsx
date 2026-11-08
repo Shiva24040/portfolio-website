@@ -36,7 +36,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onToast }) => {
     }
   };
 
-  const photoSrc = profile.avatarUrl || './images/shiva-photo.jpg';
+  const title = profile?.title || 'Aspiring AI/ML Engineer | Frontend Development Intern';
+  const photoSrc = profile?.avatarUrl || './images/shiva-photo.jpg';
 
   return (
     <section
@@ -73,11 +74,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onToast }) => {
               
               {/* Professional Title */}
               <p className="mt-3 text-lg sm:text-xl md:text-2xl font-semibold text-slate-200 flex flex-wrap items-center gap-2">
-                <span className="text-cyber-cyan font-bold">{profile.title.split('|')[0] || profile.title}</span>
-                {profile.title.includes('|') && (
+                <span className="text-cyber-cyan font-bold">{title.split('|')[0] || title}</span>
+                {title.includes('|') && (
                   <>
                     <span className="text-slate-500 hidden sm:inline">&bull;</span>
-                    <span className="text-purple-300">{profile.title.split('|')[1]}</span>
+                    <span className="text-purple-300">{title.split('|')[1]}</span>
                   </>
                 )}
               </p>

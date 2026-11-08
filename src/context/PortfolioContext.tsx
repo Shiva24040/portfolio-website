@@ -120,7 +120,33 @@ export const PortfolioProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       if (res.ok) {
         const json = await res.json();
         if (json.success && json.data) {
-          setData(json.data);
+          const remote = json.data;
+          setData({
+            ...defaultPortfolio,
+            ...remote,
+            profile: {
+              ...defaultPortfolio.profile,
+              ...(remote.profile || {}),
+              stats: Array.isArray(remote.profile?.stats)
+                ? remote.profile.stats
+                : defaultPortfolio.profile.stats,
+            },
+            about: {
+              ...defaultPortfolio.about,
+              ...(remote.about || {}),
+              interests: Array.isArray(remote.about?.interests)
+                ? remote.about.interests
+                : defaultPortfolio.about.interests,
+              goals: Array.isArray(remote.about?.goals)
+                ? remote.about.goals
+                : defaultPortfolio.about.goals,
+            },
+            skills: Array.isArray(remote.skills) ? remote.skills : defaultPortfolio.skills,
+            experience: Array.isArray(remote.experience) ? remote.experience : defaultPortfolio.experience,
+            projects: Array.isArray(remote.projects) ? remote.projects : defaultPortfolio.projects,
+            certifications: Array.isArray(remote.certifications) ? remote.certifications : defaultPortfolio.certifications,
+            education: Array.isArray(remote.education) ? remote.education : defaultPortfolio.education,
+          });
         }
       }
     } catch (err) {

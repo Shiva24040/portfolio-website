@@ -42,7 +42,7 @@ const iconMap: Record<string, React.FC<{ className?: string }>> = {
 
 export const Skills: React.FC = () => {
   const { data } = usePortfolio();
-  const skillGroups = data.skills;
+  const skillGroups = Array.isArray(data?.skills) ? data.skills : [];
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedLevel, setSelectedLevel] = useState<string>('All');
 
@@ -53,7 +53,7 @@ export const Skills: React.FC = () => {
     .filter(g => selectedCategory === 'All' || g.category === selectedCategory)
     .map(group => ({
       ...group,
-      skills: group.skills.filter(s => selectedLevel === 'All' || s.level === selectedLevel)
+      skills: (Array.isArray(group?.skills) ? group.skills : []).filter(s => selectedLevel === 'All' || s.level === selectedLevel)
     }))
     .filter(g => g.skills.length > 0);
 
